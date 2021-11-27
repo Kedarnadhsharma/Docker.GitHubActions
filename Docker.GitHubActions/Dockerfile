@@ -7,10 +7,11 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
 WORKDIR /src
-COPY ["Docker.GitHubActions/Docker.GitHubActions.csproj", "Docker.GitHubActions/"]
+COPY ["Docker.GitHubActions.csproj", "Docker.GitHubActions/"]
 RUN dotnet restore "Docker.GitHubActions/Docker.GitHubActions.csproj"
-COPY . .
+
 WORKDIR "/src/Docker.GitHubActions"
+COPY . .
 RUN dotnet build "Docker.GitHubActions.csproj" -c Release -o /app/build
 
 FROM build AS publish
