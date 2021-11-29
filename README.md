@@ -34,6 +34,16 @@ to the registry and keeping the image up to date is a tedious task. We need some
 # GitHub Actions
 1. Assuming you have your source code in Github, we can achieve the Automatic generation and publish of the images using GitHub as below.
 2. Go to Github.com/your repository and click on Actions tab and you will see a lot of options on what should happen when a change happens to the source code.
+3. You will see the following image 
+![image](https://user-images.githubusercontent.com/50028950/143858553-37d654fd-962c-4b00-a787-d5ea2fcd4197.png)
+
+4. Select the first option Docker Image with Docker hub option and click on Set up this workflow. You will be redirected to a new page.
+5. You can add the following YML file
+
+     ![image](https://user-images.githubusercontent.com/50028950/143859307-aaac47b4-8436-4b99-af0d-2c062ccc1d92.png)
+     ![image](https://user-images.githubusercontent.com/50028950/143859450-94e08fdf-d53c-47b9-9159-6a95ba7c74fa.png)
 
 
-
+6. We also need to setup the DOCKERHUB_USERNAME and DOCKERHUB_TOKEN values which are used while pushing the images into Docker hub. 
+7. So every time a change is made to the Github repository for this source code, an automatic github action will be triggered. 
+8. This process creates a brand new image and pushes the changes to Docker Hub with the GitHub build number.
