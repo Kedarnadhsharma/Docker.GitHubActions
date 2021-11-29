@@ -13,7 +13,7 @@ namespace Docker.GitHubActions.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Cold", "Sweltering", "Scorching"
+            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Cold", "Extremely Cold", "Sweltering", "Scorching"
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
