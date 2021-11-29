@@ -47,3 +47,17 @@ to the registry and keeping the image up to date is a tedious task. We need some
 6. We also need to setup the DOCKERHUB_USERNAME and DOCKERHUB_TOKEN values which are used while pushing the images into Docker hub. 
 7. So every time a change is made to the Github repository for this source code, an automatic github action will be triggered. 
 8. This process creates a brand new image and pushes the changes to Docker Hub with the GitHub build number.
+9. Go ahead and open the WeatherController.cs class from GitHub and add an extra Summary value called ""Extremely Cold" and commit the changes.
+10. Now navigate to the Actions and you can see a new build automatically getting triggered.
+![image](https://user-images.githubusercontent.com/50028950/143860614-a67bd8be-1a51-4cbb-963f-9a4771e9141c.png)
+11. Click on the latest build and you can see the build number is tagged as #8 and you can also see the various steps involved in the process 
+![image](https://user-images.githubusercontent.com/50028950/143860857-102a4de0-975a-4cd5-b3f6-e014a86784fe.png)
+12. Now as a last step, we need to verify whether the image has been published to Docker hub or not. So go to hub.docker.com and you can see the latest image with build #8 being pushed into the Registry. 
+
+![image](https://user-images.githubusercontent.com/50028950/143861141-74853102-0053-4c20-a386-8f4a1e001268.png)
+
+However, ideally you will not push your images with the latest build number but rather with a tag value like "latest". Since docker pull always gets the latest image from docker hub, applications using this command will always get the latest image if needed. 
+
+
+
+
